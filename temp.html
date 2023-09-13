@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p class="hello" id="p">2</p>
+    <button id="h">hello</button>
+</body>
+<script>
+   document.getElementById('h').addEventListener('click',()=>{
+    document.getElementsByClassName('hello')[0].textContent=4;
+   })
+   
+</script>
+</html>
