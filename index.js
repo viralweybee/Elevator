@@ -1,13 +1,4 @@
-function empty(){
-    function removeAllChildNodes(parent) {
-        while (parent.firstChild) {
-            parent.removeChild(parent.firstChild);
-        }
-    }
-    removeAllChildNodes(document.getElementsByClassName('containder1')[0]);
-    removeAllChildNodes(document.getElementsByClassName(`item1`)[0]);
-    removeAllChildNodes(document.getElementsByClassName(`container2`)[0])
-}
+
 let flag=0;
  document.getElementById('enter').addEventListener('click',()=>{
 
@@ -76,6 +67,7 @@ let flag=0;
             }
             document.getElementById(`lift${index}`).style.marginTop = `${(marginArr[i - 1])}px`;
             document.getElementById(`lift${index}`).style.transition = `${diff * 0.7}s`;
+            console.log(currposition)
         })
         document.getElementById(`floor${i}_2`).addEventListener('click', () => {
             let index = -1;
@@ -97,6 +89,7 @@ let flag=0;
             }
             document.getElementById(`lift${index}`).style.marginTop = `${(marginArr[i - 1])}px`;
             document.getElementById(`lift${index}`).style.transition = `${diff * 0.7}s`;
+            console.log(currposition)   
         })
     }
     // Maintaince
@@ -107,9 +100,10 @@ let flag=0;
                 document.getElementById(`lift${i}`).style.border = '2px solid red';
             }
             else {
-                currposition[i - 1] = 1;
+                currposition[i - 1] = Number(document.getElementsByClassName('index')[i - 1].textContent);
                 document.getElementById(`lift${i}`).style.border = '1px solid black'
             }
+            console.log(currposition)
         })
     }
 })
